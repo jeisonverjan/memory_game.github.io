@@ -1,4 +1,3 @@
-from socketserver import UDPServer
 import pygame
 import sys
 from random import randint
@@ -129,8 +128,8 @@ while True:
                 screen.blit(element.object, (x_pos, y_pos))
                 element.object.fill('blue')
             if not element.show:
-                screen.blit(element.object, (x_pos, y_pos))
                 if time_counter > 0 and current_time - time_counter > 2000:
+                    screen.blit(element.object, (x_pos, y_pos))
                     element.object.fill('white')
             x_pos += rectangle_size            
         y_pos += rectangle_size
