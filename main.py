@@ -45,7 +45,7 @@ screen_height = len(rectangles) * rectangle_size + start_bottom_height
 
 # Screen init
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption('Memorey game!! - By Jverjan')
+pygame.display.set_caption('Memory game!! - By Jverjan')
 
 # Start Buttom set up
 start_bottom_width = screen_width
@@ -75,7 +75,7 @@ def show_board(play_running):
         pygame.draw.line(screen, 'black', (screen_width//rectangles_number *i,0), (screen_width//rectangles_number * i,(screen_height - start_bottom_height)))
         pygame.draw.line(screen, 'black', (0, (screen_height - start_bottom_height)//rectangles_number * i), (screen_width, (screen_height - start_bottom_height)//rectangles_number * i))
 
-        # Drawing start bottom
+        # Drawing start buttom
     if play_running:
         pygame.draw.rect(screen, 'gray', start_bottom)
         screen.blit(font.render('', True, 'black'), (x_font, y_font))
@@ -137,10 +137,11 @@ def game_overs():
     game_over_rect.center = (screen_width//2, (screen_height- start_bottom_height)//2 )
     screen.blit(game_over_text, game_over_rect)      
 
+# Game loop
 while True:
     pygame.time.Clock().tick(1)
     for event in pygame.event.get():
-        # Closing the game if the user press X bottom
+        # Closing the game if the user press X buttom
         if event.type == pygame.QUIT:
             exit()
         elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -161,7 +162,7 @@ while True:
                     continue
                 # Checking if the user matched the pattern
                 if user_answer == random_array:
-                    game_active = False # to ignore clicks until a new patters be showed
+                    game_active = False # to ignore clicks until a new pattern be showed
                     user_answer.clear()
                     corrects +=1
                     generate_rect = True
