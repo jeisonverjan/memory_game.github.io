@@ -97,7 +97,7 @@ while True:
         for element in i:
             if element.show:
                 screen.blit(element.object, (x_pos, y_pos))
-                #element.object.fill('blue')
+                element.object.fill('blue')
             if not element.show:
                 screen.blit(element.object, (x_pos, y_pos))
                 element.object.fill('white')
